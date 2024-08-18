@@ -11,4 +11,3 @@ chmod +x ./restart_obuspc_controller.sh
 ./restart_obuspc_controller.sh
 
 /bin/bash
-
