@@ -14,12 +14,11 @@ log_message() {
 
 log_message "Attempting to stop any running instances of $PROCESS_NAME..."
 if pgrep "$PROCESS_NAME" > /dev/null 2>&1; then
-    pkill "$PROCESS_NAME"
+    killall "$PROCESS_NAME"
     if [ $? -eq 0 ]; then
         log_message "$PROCESS_NAME successfully stopped."
     else
-        log_message "Failed to stop $PROCESS_NAME."
-        exit 1
+        log_message "No $PROCESS_NAME killed."
     fi
 else
     log_message "No running instances of $PROCESS_NAME found."
